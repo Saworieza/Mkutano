@@ -1,4 +1,12 @@
 source 'https://rubygems.org'
+gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem 'devise'
+gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+gem 'acts_as_votable', '~> 0.10.0'
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
+gem 'acts-as-taggable-on', '~> 3.4'
+gem "fullcalendar-rails"
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
