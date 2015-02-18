@@ -1,5 +1,6 @@
 <h1>Editing event</h1>
 
+<%= image_tag @event.image.url(:medium)%>
 <%= render 'form' %>
 
 <%= link_to 'Show', @event %> |
