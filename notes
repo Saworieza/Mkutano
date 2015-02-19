@@ -1,5 +1,5 @@
 NOW HAPPENING
-fixing devise
+
 
 
 COMMITS
@@ -8,7 +8,7 @@ COMMITS
 
 
 ERRORS 
-fix the devise related errors that appear at sign up, these include missing fields and
+fix the tagging tabble thingy
 
 
 FIGURE OUTS
@@ -40,18 +40,6 @@ GEMS
 
 
 UNCATEGORIZRED
-<!--
-<% if user_signed_in? %>
-  <li>
-  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
-  </li>
-<% else %>
-  <li>
-  <%= link_to('Login', new_user_session_path)  %>  
-  </li>
-<% end %>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>-->
 
 
 

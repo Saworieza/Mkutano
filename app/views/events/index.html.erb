@@ -16,6 +16,7 @@
     <% @events.each do |event| %>
       <tr>
         <td><%= event.name %></td>
+        <td><%#= event.tags.map(&:name).map { |t| link_to t, tag_path(t)}.join(', ') %></td>
         <td><%= event.description %></td>
         <td><%= event.start_time %></td>
         <td><%= event.end_time %></td>
