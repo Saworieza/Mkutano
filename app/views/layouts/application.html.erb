@@ -10,7 +10,7 @@
 
 </head>
 <body>
-<!--pu these in a nav bar later on-->
+<!--put these in a nav bar later on-->
 <% if user_signed_in? %>
   <li>
   <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
@@ -22,6 +22,7 @@
 <% end %>
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
+
 <%= yield %>
 
 </body>
