@@ -6,40 +6,11 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 
- <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Better meetings. Anywhere. Anytime. An exciting new way to organize for meetings bla bla bla.">
-  <meta itemprop="name" content="Revision844">
-  <meta itemprop="description" content="Better meetings. Anywhere. Anytime. An exciting new way to organize for meetings bla bla bla.">
-  <meta itemprop="image" content="http://www.revision844.co.ke/assets/revision844_banner.png">
-  <meta property="og:image" content="http://www.revision844.co.ke/assets/revision844_banner.png" />
-  <meta itemprop="url" content="http://www.sitename.co.ke">
-  <meta name="author" content="Asilia">
-  
-  <link href="assets/favicon-daff31422b393866941f1253d5af4769.png" rel="shortcut icon" type="image/vnd.microsoft.icon" />
-  <title>Mkutano | Meetings made easier</title>
-
-  <%= stylesheet_link_tag    'application-145ebbae97fba5f8c6e03b2e3dbe19cb', media: 'all', 'data-turbolinks-track' => true %>
-  <!--<link data-turbolinks-track="true" href="assets/application-145ebbae97fba5f8c6e03b2e3dbe19cb.css" media="all" rel="stylesheet" />-->
-  <link data-turbolinks-track="true" href="http://fonts.googleapis.com/css?family=Open+Sans:400" media="all" rel="stylesheet" />
-  <link data-turbolinks-track="true" href="http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700" media="all" rel="stylesheet" />
-
-  <%= javascript_include_tag 'application-1ae8502203dce617f805c5b6be7831ef', 'data-turbolinks-track' => true %>
-
-  <!--<script data-turbolinks-track="true" src="assets/application-1ae8502203dce617f805c5b6be7831ef.js"></script>-->
-	<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  <meta content="authenticity_token" name="csrf-param" />
-  <meta content="SRDt7NfB19ONEJcBtp28dolFv8Fp9K3VEbvTyGc4YAc=" name="csrf-token" />
-
+ 
 
 </head>
 <body>
-
+<!--pu these in a nav bar later on-->
 <% if user_signed_in? %>
   <li>
   <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
