@@ -9,18 +9,59 @@
  
 
 </head>
-<body>
-<% if user_signed_in? %>
-  <li>
-  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
-  </li>
-<% else %>
-  <li>
-  <%= link_to('Login', new_user_session_path)  %>  
-  </li>
-<% end %>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<body class="home" data-spy="scroll" data-target=".navbar-collapse">
+<!-- Navbar -->
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container nav-container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+        <a class="navbar-brand in-app" href="index.html#landing">
+          <%= image_tag("logo-white-77706a6d7edc825bd3a5f60d3b639488.png", class: "logo", alt: "Logo white") %>
+        </a>
+        
+    </div>
+    <div class="collapse navbar-collapse text-center">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html#intro" class="in-app">Intro</a></li>
+            <li><a href="index.html#howitworks" class="in-app">How it works</a></li>
+            <li><a href="index.html#showcase" class="in-app">Showcase</a></li>
+            <li><a href="index.html#pricing" class="in-app">Features & Pricing</a></li>
+            <!-- <li><a href="upgrading" class="in-app">Upgrade</a></li> --> 
+            <li><a href="index.html#charity" class="in-app">Giving back</a></li>
+            <!-- <li><a href="#getstarted" class="in-app">Start</a></li> -->
+          </ul>
+          <div class="nav-sign-in-up">
+          <%= link_to('Sign In', new_user_session_path)  %>
+          <%#= link_to ('Sign In', new_user_session_path), class: "btn btn-default btn-sign btn-sign-in open-sans-condensed btn-rounded", target: "_blank" %>
+          
+            <!--<a href="http://app.revision844.co.ke" target="_blank" class="">Sign In</a>-->
+            <%= link_to('Sign Up', new_user_registration_path)  %>
+            <!--<a href="index.html#getstarted" class="btn btn-success btn-sign open-sans-condensed btn-rounded in-app">Sign Up</a>-->
+          </div>
+    </div>
+  </div>
+<!--/.nav-collapse -->
+</div>
+<!-- /Navbar -->
+
+<!-- Success and Error notices -->
+<div id="alert-success" style="display:none">
+<div class="alert alert-dismissable alert-success text-center">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    
+</div>
+</div>
+<div id="alert-danger" style="display:none">
+<div class="alert alert-dismissable alert-danger text-center">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+    
+</div>
+</div><!-- /Success and Error notices -->
 <%= yield %>
 
 </body>

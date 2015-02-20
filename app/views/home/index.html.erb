@@ -8,7 +8,7 @@
     <meta name="description" content="Better revision. Anywhere. Anytime. An exciting new way to study or revise from the comfort of your computer or mobile phone. Give your revision a boost today.">
     <meta itemprop="name" content="Revision844"><meta itemprop="description" content="Better revision. Anywhere. Anytime. An exciting new way to study or revise from the comfort of your computer or mobile phone. Give your revision a boost today."><meta itemprop="image" content="http://www.revision844.co.ke/assets/revision844_banner.png"><meta property="og:image" content="http://www.revision844.co.ke/assets/revision844_banner.png" /><meta itemprop="url" content="http://www.revision844.co.ke">
     <meta name="author" content="Asilia">
-    <link href="assets/favicon-daff31422b393866941f1253d5af4769.png" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+    <%= favicon_link_tag 'favicon-daff31422b393866941f1253d5af4769.png', rel: 'shortcut icon', type: 'image/vnd.microsoft.icon' %>
 	<title>Revision844 | 844 revision made easier</title>
 	<link data-turbolinks-track="true" href="assets/application-145ebbae97fba5f8c6e03b2e3dbe19cb.css" media="all" rel="stylesheet" />
 <link data-turbolinks-track="true" href="http://fonts.googleapis.com/css?family=Open+Sans:400" media="all" rel="stylesheet" />
@@ -101,33 +101,7 @@
 	<div class="container text-center">
 		<h1 class="page-title padded-bottom">How it works</h1>
 		<div class="row">
-			<div class="col-sm-4">
-				<div class="box-cover">
-					<div class="box">
-						Sign up for an account via the web or the mobile app. The app is available on Android and iOS.
-					</div>
-				</div>
-				<div class="arrow-right">
-				<%= image_tag("arrow-right-e2c86c7d11b625ef8deeee4ad4657bb1.png", class: "logo", alt: "Arrow right") %>
-				</div>
-			</div>
-			<div class="col-sm-4">
-				<div class="box-cover">
-					<div class="box">
-						Access study notes and questions by selecting your class, subject and topic.
-					</div>
-				</div>
-				<div class="arrow-right">
-				<%= image_tag("arrow-right-e2c86c7d11b625ef8deeee4ad4657bb1.png", class: "logo", alt: "Arrow right") %>
-				</div>
-			</div>
-			<div class="col-sm-4">
-				<div class="box-cover">
-					<div class="box">
-						Upgrade to a premium account to gain access to the full suite of amazing study material.
-					</div>
-				</div>
-			</div>
+			<div id='calendar' style="width:50%; height:50%; margin: 0 auto;"></div>
 		</div>
 	</div>
 </div>
@@ -148,43 +122,43 @@
 			<!-- slides -->
 			<div class="carousel-inner">
 				<div class="item active">
-				<%= image_tag("screens/mR844-login-ff2fb382f0ae410145aaa348763437ac.png", alt: "App login screen") %>
+				<%= image_tag("mR844-login-ff2fb382f0ae410145aaa348763437ac.png", alt: "App login screen") %>
 					<div class="carousel-caption">
 						<p>App login screen</p>
 					</div>
 				</div>
 				<div class="item">
-				<%= image_tag("screens/mR844-menu-open-70d3ffc36fd38a6c97316e6a33d0b9a3.png", alt: "App classes screen") %>
+				<%= image_tag("mR844-menu-open-70d3ffc36fd38a6c97316e6a33d0b9a3.png", alt: "App classes screen") %>
 					<div class="carousel-caption">
 						<p>App classes screen</p>
 					</div>
 				</div>
 				<div class="item">
-				<%= image_tag("assets/screens/mR844-subjects-4e5cd371a1eed2cec8d8e2f566222a05.png", alt: "App subjects screen") %>
+				<%= image_tag("mR844-subjects-4e5cd371a1eed2cec8d8e2f566222a05.png", alt: "App subjects screen") %>
 					<div class="carousel-caption">
 						<p>App subjects screen</p>
 					</div>
 				</div>
 				<div class="item">
-				<%= image_tag("assets/screens/mR844-subject-deets-0c405870520513492d24263f64f17b6a.png", alt: "App subject sets") %>
+				<%= image_tag("mR844-subject-deets-0c405870520513492d24263f64f17b6a.png", alt: "App subject sets") %>
 					<div class="carousel-caption">
 						<p>App subject sets</p>
 					</div>
 				</div>
 				<div class="item">
-				<%= image_tag("assets/screens/mR844-question-e6b9af8b10637a49675955864c9792e0.png", alt: "App question screen") %>
+				<%= image_tag("mR844-question-e6b9af8b10637a49675955864c9792e0.png", alt: "App question screen") %>
 					<div class="carousel-caption">
 						<p>App question screen</p>
 					</div>
 				</div>
 				<div class="item">
-				<%= image_tag("assets/screens/mR844-profile-25592ee3eba32a67adebe8965759e2a5.png", alt: "App profile screen") %>
+				<%= image_tag("mR844-profile-25592ee3eba32a67adebe8965759e2a5.png", alt: "App profile screen") %>
 					<div class="carousel-caption">
 						<p>App profile screen</p>
 					</div>
 				</div>
 				<div class="item">
-				<%= image_tag("assets/screens/mR844-edit-profile-0b66de4254e6bc6530e535015089dcb2.png", alt: "App edit profile screen") %>
+				<%= image_tag("mR844-edit-profile-0b66de4254e6bc6530e535015089dcb2.png", alt: "App edit profile screen") %>
 					<div class="carousel-caption">
 						<p>App edit profile screen</p>
 					</div>
@@ -363,5 +337,5 @@
 });
   </script>
 </div>
-<div id='calendar' style="width:70%; margin: 0 auto;"></div>
+
 

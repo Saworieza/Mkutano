@@ -3,7 +3,7 @@ NOW HAPPENING
 
 
 COMMITS
-
+moved the navbar to layouts
 
 
 
@@ -12,7 +12,8 @@ fix the tagging tabble thingy
 
 
 FIGURE OUTS
-why the home page aint styling like it did initially
+why the events page aint picking the nav as is from the layouts page
+why does the sign in/up button not work after moving things to layouts?
 
 how to create a newsletter app
 how to update the calendar with the events created form the events page
@@ -40,6 +41,17 @@ GEMS
 
 
 UNCATEGORIZRED
+<% if user_signed_in? %>
+  <li>
+  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+  </li>
+<% else %>
+  <li>
+  <%= link_to('Login', new_user_session_path)  %>  
+  </li>
+<% end %>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
 
 
 
