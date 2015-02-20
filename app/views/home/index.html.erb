@@ -33,28 +33,38 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-        <a class="navbar-brand in-app" href="index.html#landing">
-        	<%= image_tag("logo-white-77706a6d7edc825bd3a5f60d3b639488.png", class: "logo", alt: "Logo white") %>
-      	</a>
+      <%= link_to(image_tag("logo-white-77706a6d7edc825bd3a5f60d3b639488.png", class: "logo", alt: "Logo white"), root_path, class: "navbar-brand in-app") %>
+      	
         
     </div>
     <div class="collapse navbar-collapse text-center">
           <ul class="nav navbar-nav">
-            <li><a href="index.html#intro" class="in-app">Intro</a></li>
-            <li><a href="index.html#howitworks" class="in-app">How it works</a></li>
-            <li><a href="index.html#showcase" class="in-app">Showcase</a></li>
-            <li><a href="index.html#pricing" class="in-app">Features & Pricing</a></li>
+            <li><%= link_to "Home", :anchor => "landing " %><!--<a href="index.html#intro" class="in-app">Intro</a>--></li>
+            <li><%= link_to "Events", :anchor => "howitworks" %><!--<a href="index.html#howitworks" class="in-app">How it works</a>--></li>
+            <li><%= link_to "About", :anchor => "showcase" %><!--<a href="index.html#showcase" class="in-app">Showcase</a>--></li>
+            <li><%= link_to "Archives", :anchor => "intro" %><!--<a href="index.html#pricing" class="in-app">Features & Pricing</a>--></li>
             <!-- <li><a href="upgrading" class="in-app">Upgrade</a></li> --> 
-            <li><a href="index.html#charity" class="in-app">Giving back</a></li>
+            <li><%= link_to "Contact", :anchor => "intro" %><!--<a href="index.html#charity" class="in-app">Giving back</a>--></li>
             <!-- <li><a href="#getstarted" class="in-app">Start</a></li> -->
           </ul>
-          <div class="nav-sign-in-up">
-          <%= link_to('Sign In', new_user_session_path)  %>
-          <%#= link_to ('Sign In', new_user_session_path), class: "btn btn-default btn-sign btn-sign-in open-sans-condensed btn-rounded", target: "_blank" %>
-          
-            <!--<a href="http://app.revision844.co.ke" target="_blank" class="">Sign In</a>-->
+
+         <div class="nav-sign-in-up">
+         <% if user_signed_in? %>
+  			<li>
+  				<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+  			</li>
+			<% else %>
+  			<li>
+  			<%= link_to('Sign In', new_user_session_path)  %>
+          	<%#= link_to ('Sign In', new_user_session_path), class: "btn btn-default btn-sign btn-sign-in open-sans-condensed btn-rounded", target: "_blank" %>
+          	<!--<a href="http://app.revision844.co.ke" target="_blank" class="">Sign In</a>-->
             <%= link_to('Sign Up', new_user_registration_path)  %>
             <!--<a href="index.html#getstarted" class="btn btn-success btn-sign open-sans-condensed btn-rounded in-app">Sign Up</a>-->
+  			</li>
+		<% end %>
+          
+          
+            
           </div>
     </div>
   </div>
@@ -101,7 +111,32 @@
 	<div class="container text-center">
 		<h1 class="page-title padded-bottom">How it works</h1>
 		<div class="row">
-			<div id='calendar' style="width:50%; height:50%; margin: 0 auto;"></div>
+		<div class="page-header">
+  			<h1>Example page header <small>Subtext for header</small></h1>
+		</div>
+			<div class="col-md-2" >
+				<h2>Categories</h2><!-- change the colors -->
+            	<h4><%= link_to 'Automotives' %><br></h4>
+            	<h4><%= link_to 'Aeronautical' %><br></h4>
+            	<h4><%= link_to 'Water Works' %><br></h4>
+            	<h4><%= link_to 'Mathematives' %></h4>
+
+        	</div>
+        	<div class="col-md-8" style="border-left: 2px solid black; border-right: 2px solid black;">
+            	<div id='calendar' style="width:50%; height:50%; margin: 0 auto;"></div>
+        	</div>
+        	<div class="col-md-2" >
+				<h3>Upcoming Events</h3>
+				<!-- change the colors and write an algorithm that makes only events in current month to show up -->
+				<!-- halafu, which is better, to list all events in this month ama to list a specific number. remember, there may be 101 events this month. think of how rendereing that may be-->
+				<% @events.each do |event| %>
+      				<tr>
+        				<td><%= link_to (event.name), event %></td><br>
+      				</tr>
+    			<% end %>
+            	<%#= will_paginate @events %>
+
+        	</div>
 		</div>
 	</div>
 </div>
